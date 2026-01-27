@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.74" />
+
+    <EditText
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="336dp"
+        android:hint="0"
+        android:textSize="88dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonCE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/summation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:paddingVertical="50dp"
+        android:text="+"
+        android:textSize="54sp"
+        app:layout_constraintBottom_toTopOf="@+id/substraction"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@id/guidelineCalc"
+        app:layout_constraintTop_toTopOf="@+id/buttonCE"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/substraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:paddingVertical="28dp"
+        android:text="-"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/multiplication"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalc"
+        app:layout_constraintTop_toBottomOf="@+id/summation" />
+
+    <Button
+        android:id="@+id/multiplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="28dp"
+        android:text="*"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCalc"
+        app:layout_constraintTop_toBottomOf="@+id/substraction" />
+
+    <Button
+        android:id="@+id/number2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="2"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/number1"
+        app:layout_constraintEnd_toStartOf="@+id/number3"
+        app:layout_constraintStart_toEndOf="@+id/number1"
+        app:layout_constraintTop_toTopOf="@+id/number1" />
+
+    <Button
+        android:id="@+id/number3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="3"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/number2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalc"
+        app:layout_constraintTop_toTopOf="@+id/number2"
+        app:layout_constraintStart_toEndOf="@+id/number2"/>
+
+    <Button
+        android:id="@+id/number4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="15dp"
+        android:text="4"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/number5"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number1" />
+
+    <Button
+        android:id="@+id/number5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="5"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/number4"
+        app:layout_constraintEnd_toStartOf="@+id/number6"
+        app:layout_constraintStart_toEndOf="@+id/number4"
+        app:layout_constraintTop_toTopOf="@+id/number4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/number6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="6"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/number5"
+        app:layout_constraintBottom_toBottomOf="@+id/number5"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalc"
+        app:layout_constraintTop_toTopOf="@+id/number5" />
+
+    <Button
+        android:id="@+id/number7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="15dp"
+        android:text="7"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/number8"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number4" />
+
+    <Button
+        android:id="@+id/number1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingVertical="15dp"
+        android:text="1"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/number2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCE" />
+
+    <Button
+        android:id="@+id/number8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="8"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/number7"
+        app:layout_constraintBottom_toBottomOf="@+id/number7"
+        app:layout_constraintEnd_toStartOf="@+id/number9"
+        app:layout_constraintTop_toTopOf="@+id/number7" />
+
+    <Button
+        android:id="@+id/number9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="9"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/number8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalc"
+        app:layout_constraintStart_toEndOf="@+id/number8"
+        app:layout_constraintTop_toTopOf="@+id/number8" />
+
+    <Button
+        android:id="@+id/number0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="0"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@+id/dotBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/dotBtn"
+        app:layout_constraintEnd_toStartOf="@+id/division"
+        app:layout_constraintTop_toTopOf="@+id/dotBtn" />
+
+    <Button
+        android:id="@+id/dotBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:paddingVertical="15dp"
+        android:text="."
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/number0"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number7" />
+
+    <Button
+        android:id="@+id/division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="/"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/number0"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalc"
+        app:layout_constraintStart_toEndOf="@+id/number0"
+        app:layout_constraintTop_toTopOf="@+id/number0" />
+
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:paddingVertical="15dp"
+        android:text="clear"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonCE"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCalc"
+        app:layout_constraintStart_toEndOf="@+id/buttonCE"
+        app:layout_constraintTop_toTopOf="@+id/buttonCE" />
+
+    <Button
+        android:id="@+id/buttonCE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="15dp"
+        android:text="CE"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/clearBtn"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

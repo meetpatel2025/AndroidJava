@@ -8,21 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    <EditText-->
-<!--        android:id="@+id/resultText"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="0"-->
-<!--        android:textSize="88sp"-->
-<!--        android:gravity="end"-->
-<!--        android:focusable="false"-->
-<!--        android:cursorVisible="false"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/keypadContainer" />-->
 
-    <!-- NEW: container that fills the space between resultText and bottom -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/keypadContainer"
         android:layout_width="0dp"
@@ -39,18 +25,22 @@
             android:id="@+id/resultText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:cursorVisible="false"
             android:focusable="false"
             android:gravity="end"
             android:hint="0"
-            android:layout_marginHorizontal="10dp"
+            app:autoSizeMaxTextSize="88sp"
             android:textSize="88sp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="34sp"
+            app:autoSizeStepGranularity="12sp"
             app:layout_constraintBottom_toTopOf="@id/summation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.772" />
+            app:layout_constraintVertical_bias="0.794" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineCalc"
@@ -261,8 +251,6 @@
             app:layout_constraintStart_toEndOf="@+id/number8"
             app:layout_constraintTop_toTopOf="@+id/number8" />
 
-        <!--    Clear and CE button-->
-
         <Button
             android:id="@+id/number0"
             android:layout_width="wrap_content"
@@ -293,17 +281,20 @@
             app:layout_constraintTop_toBottomOf="@+id/number7"
             app:layout_constraintVertical_bias="0.0" />
 
+        <!--    Clear and CE button-->
+
         <Button
             android:id="@+id/clearBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginEnd="11dp"
             android:onClick="clearClick"
             android:paddingVertical="15dp"
             android:text="clear"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@+id/buttonCE"
             app:layout_constraintEnd_toStartOf="@+id/guidelineCalc"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/buttonCE"
             app:layout_constraintTop_toTopOf="@+id/buttonCE" />
 
@@ -311,17 +302,18 @@
             android:id="@+id/buttonCE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="332dp"
+            android:layout_marginStart="60dp"
             android:onClick="ceClick"
             android:paddingVertical="15dp"
             android:text="CE"
             android:textSize="22sp"
-            app:layout_constraintEnd_toStartOf="@+id/clearBtn"
-            app:layout_constraintHorizontal_bias="0.746"
-            app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineCalc"
+            app:layout_constraintHorizontal_bias="0.185"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.524"
+            app:layout_constraintVertical_chainStyle="packed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

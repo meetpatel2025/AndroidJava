@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     String current="";
     String operation="";
 
+    String calculation="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,44 +29,90 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
             return insets;
         });
+        resultText = findViewById(R.id.resultText);
+        resultText.setText("0");
     }
     public void numberClick(View v){
         Button b = (Button) v;
-        current += b.getText().toString();
-        resultText.setText(current);
+        String text = b.getText().toString();
+
+        if(current.equals("0") && !current.equals(".")){
+            current = "";
+        }
+        if(text.equals(".")){
+            if(current.isEmpty()){
+                current = "0";
+            }else if(current.contains(".")){
+                current +=".";
+            }
+        }else{
+            current +=text;
+        }
+
+//        current += b.getText().toString();
+        resultText.setText(calculation.concat(current));
     }
 
     public void mathOperation(View v){
         Button b = (Button) v;
         num1 = Double.parseDouble(current);
-        operation += b.getText().toString();
+        operation = b.getText().toString();
+        calculation = current.concat(operation);
+        resultText.setText(calculation);
         current = "";
     }
 
     public void equalsClick(View view) {
         double num2 = Double.parseDouble(current);
         double result = 0;
-
+//        resultText.setText(calculation.concat(String.valueOf(num2)));
         switch(operation) {
-            case "+": result = num1 + num2; break;
-            case "-": result = num1 - num2; break;
-            case "*": result = num1 * num2; break;
-            case "/": result = num1 / num2; break;
+            case "+": {
+                result = num1 + num2;
+                break;
+            }
+            case "-": {
+                result = num1 - num2;
+                break;
+            }
+            case "*": {
+                result = num1 * num2;
+                break;
+            }
+            case "/": {
+                if(num2 ==0){
+                    Toast.makeText(this, "Can't devide by zeo", Toast.LENGTH_SHORT).show();
+                    current = "";
+                    operation = "";
+                    return;
+
+                }
+                result = num1 / num2;
+                break;
+            }
         }
 
         resultText.setText(String.valueOf(result));
         current = "";
+        calculation="";
     }
 
     public void clearClick(View view) {
         current = "";
+        operation = "";
+        calculation="";
+        num1 = 0;
         resultText.setText("0");
     }
 
     public void ceClick(View view) {
+        current = "";
+        operation = "";
+        calculation="";
+        num1 = 0;
         resultText.setText("0");
     }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
+    android:background="@drawable/purple_bg"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -42,6 +43,7 @@
             android:focusable="false"
             android:gravity="end"
             android:hint="0"
+            android:layout_marginHorizontal="10dp"
             android:textSize="88sp"
             app:layout_constraintBottom_toTopOf="@id/summation"
             app:layout_constraintEnd_toEndOf="parent"
